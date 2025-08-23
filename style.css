@@ -1,0 +1,256 @@
+/* === Reset + base styles === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  color: white;
+  background-color: #000;
+}
+
+/* === Homepage layout === */
+#overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('Amanecer en Madrid.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  text-align: center;
+  opacity: 1;
+}
+
+#overlay-content > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px 30px;
+  border-radius: 20px;
+}
+
+/* Subtitle text */
+#subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #f7c873;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+.button-group button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffcc66;
+  border: 2px solid #00ffff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px #ffcc66;
+}
+
+.button-group button:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+}
+
+/* === Game Scene === */
+#game-container {
+  display: none;
+  background-color: #0b0c10;
+  padding: 40px 20px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Scene image */
+#scene-image img {
+  max-width: 100%;
+  max-height: 20vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* Main scene text */
+#scene-text {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Scramble challenge */
+#sentence-scramble {
+  margin-top: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.scramble-instructions {
+  color: #ffe58a;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.scramble-word {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  margin: 6px 6px 6px 0;
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-size: 1rem;
+  cursor: move;
+}
+.scramble-sentence {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: move;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #222222;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.scramble-sentence:hover {
+  background-color: #f0f0f0;
+}
+
+#scramble-feedback {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* === Scene 2 – Email & Chat === */
+.email-box {
+  background-color: #1c1f26;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #eaeaea;
+}
+
+.email-box strong {
+  color: #f7c873;
+}
+
+.chat-message {
+  background-color: #262932;
+  padding: 12px 18px;
+  margin: 10px 0 30px;
+  border-left: 4px solid #00ffff;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 1rem;
+  max-width: 600px;
+  color: #c0c0c0;
+}
+
+/* Decision buttons */
+.decision-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.decision-buttons button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffcc66;
+  border: 2px solid #00ffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px #ffcc66;
+}
+
+.decision-buttons button:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #ffffff;
+  text-shadow: 0 0 2px #ffffff;
+}
+
+/* === Animation Keyframes === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.screen-frame {
+  background-color: #1f1f1f;
+  border: 3px solid #888;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-family: "Courier New", monospace;
+  color: #f0f0f0;
+}
+
+.screen-frame .scramble-word {
+  display: block;
+  background-color: #2c2c2c;
+  border: 1px solid #666;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 6px 0;
+  cursor: grab;
+  user-select: none;
+}
+/* default scene image behavior */
+#scene-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* full-screen image only when body has .scene4A1-active */
+body.scene4A1-active #scene-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.scramble-word {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  margin: 6px 6px 6px 0;
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-size: 1rem;
+  cursor: move;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+}
